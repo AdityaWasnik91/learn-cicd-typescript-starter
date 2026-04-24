@@ -1,5 +1,6 @@
 name: ci
 
+
 on:
   pull_request:
     branches: [main]
@@ -18,5 +19,9 @@ jobs:
         with:
           node-version: 22
 
-      - name: Force Failure
-        run: (exit 1)
+      - name: Node Version Check 
+        run: node --version 
+      
+      - name: Install deps 
+	run: npm ci 
+	run: npm run test
