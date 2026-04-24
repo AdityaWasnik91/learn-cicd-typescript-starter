@@ -21,12 +21,7 @@ jobs:
 
       - name: Node Version Check 
         run: node --version 
-  train-model:
-    name: GPU-test 
-    runs-on: gpu-2-core-ubuntu-2204
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Check GPU
-        run: nvidia-smi
-
+      
+      - name: Install deps 
+	run: npm ci 
+	run: npm run test
